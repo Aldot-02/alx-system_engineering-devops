@@ -1,0 +1,7 @@
+To address the issues with this infrastructure:
+
+Terminating SSL at the load balancer level: Terminating SSL at the load balancer can be a potential issue because the communication between the load balancer and the backend servers is done over unencrypted HTTP. If the connection between the load balancer and backend servers is compromised, the data transmitted within the infrastructure becomes vulnerable. To mitigate this, SSL encryption should be maintained throughout the entire infrastructure.
+
+Single MySQL server accepting writes: Having only one MySQL server capable of accepting writes creates a single point of failure. If the primary server fails, write operations would be disrupted. Implementing a multi-master setup or having multiple primary nodes in a cluster can provide redundancy and fault tolerance.
+
+Servers with the same components: Having servers with all the same components (database, web server, and application server) might be a problem in terms of scalability and resource utilization. It might be more efficient to separate the responsibilities, such as having dedicated database servers, application servers, and web servers, rather than having all components on every server. This approach allows for better resource allocation and scalability.

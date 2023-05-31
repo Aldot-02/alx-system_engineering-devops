@@ -1,0 +1,39 @@
+This document provides an overview of the infrastructure design for hosting a website using a single server, load balancer (HAproxy), and split components such as web server, application server, and database. The goal is to improve scalability, fault tolerance, and performance of the web application.
+
+Infrastructure Overview:
+
+Server:
+
+The server will host the infrastructure components, including the load balancer, web server, application server, and database. It acts as the primary computing resource for the entire system.
+Load Balancer (HAproxy):
+
+The load balancer is added to distribute incoming requests across multiple servers in the infrastructure. It helps balance the load and ensures efficient utilization of resources.
+The load balancer is configured as a cluster with another load balancer to provide redundancy and high availability.
+Web Server:
+
+The web server component, such as Nginx or Apache, is separated from the application server. It is responsible for handling HTTP requests, serving static files, and providing a reverse proxy to the application server.
+Splitting the web server and application server allows for better resource allocation and flexibility in scaling each component independently.
+Application Server:
+
+The application server executes the website's code base, processes dynamic requests, and generates dynamic content.
+By separating the application server from the web server, it becomes easier to manage and scale each component based on its specific requirements.
+Database:
+
+The database component, such as MySQL or PostgreSQL, is separated from the other components. It stores and manages the website's data.
+Splitting the database allows for dedicated resources and better performance, as well as enabling efficient scaling of the database as needed.
+Specifics about the Infrastructure:
+
+Load Balancer Cluster:
+
+The addition of a load balancer cluster provides redundancy and high availability. If one load balancer fails, the other can seamlessly take over the traffic distribution.
+A load balancer cluster helps improve fault tolerance and ensures continuous availability of the web application.
+Separation of Components:
+
+The separation of components into their own servers (web server, application server, and database) allows for better resource allocation and scalability.
+Each component can be scaled independently based on its specific requirements, enhancing performance and accommodating varying workloads.
+Why We Add Each Element:
+
+Load Balancer: It distributes incoming requests across multiple servers to balance the load and optimize resource utilization.
+Web Server: It handles HTTP requests, serves static files, and acts as a reverse proxy to the application server.
+Application Server: It executes the code base, processes dynamic requests, and generates dynamic content.
+Database: It stores and manages the website's data.

@@ -1,0 +1,7 @@
+ let's discuss the issues with this infrastructure:
+
+Single Point of Failure (SPOF): Since the entire infrastructure relies on a single server, any failure or downtime of the server would result in the website being inaccessible. If the server crashes or experiences hardware issues, the website will be unavailable until the server is repaired or replaced.
+
+Downtime during Maintenance: When performing maintenance tasks, such as deploying new code or updating server configurations, the web server needs to be restarted. During this restart process, the website will experience downtime, causing temporary unavailability to users.
+
+Inability to Scale with High Traffic: With this infrastructure, if there is a sudden surge in incoming traffic, the single server may not be able to handle the increased load effectively. This could lead to slow response times or even complete unavailability of the website during periods of high traffic.
